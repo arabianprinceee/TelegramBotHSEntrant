@@ -8,6 +8,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.InputFiles;
 using System.Threading;
 using MihaZupan;
+using System.Text.Json;
 using System.Collections.Generic;
 
 
@@ -18,7 +19,6 @@ namespace TelegramBotHSE
     class MainClass
     {
         static TelegramBotClient Client; // Основаная переменная клиента
-        static bool stopbot = false;
 
         /// <summary>
         /// Метод, обрабатывающий нажатие кнопок
@@ -465,7 +465,7 @@ namespace TelegramBotHSE
                         case "Современное искусство":
                             await Client.SendTextMessageAsync(message.Chat.Id, InfoNapravleniya[44]);
                             break;
-                        case "История исскуств":
+                        case "История искусств":
                             await Client.SendTextMessageAsync(message.Chat.Id, InfoNapravleniya[45]);
                             break;
 
@@ -559,7 +559,7 @@ namespace TelegramBotHSE
 
                         // НАПРАВЛЕНИЯ ПЕРМЬ
                         case "Пермь⁣":
-                            NapravleniyaPerm.SPBFaculteti(e, Client);
+                            NapravleniyaPerm.PermFaculteti(e, Client);
                             break;
                         case "Программная инженерия (Пермь)":
                             await Client.SendTextMessageAsync(message.Chat.Id, InfoNapravleniya[68]);

@@ -6,6 +6,7 @@ using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.InputFiles;
+using System.Text.Json;
 
 namespace TelegramBotHSE
 {
@@ -17,41 +18,12 @@ namespace TelegramBotHSE
         /// </summary>
         /// <param name="e"></param>
         /// <param name="Client"></param>
-        public static async void SPBFaculteti(MessageEventArgs e, TelegramBotClient Client)
+        public static async void PermFaculteti(MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
-            var replyKeyBoard = new ReplyKeyboardMarkup(new[]
-            {
-                new[]
-                {
-                    new KeyboardButton("Программная инженерия (Пермь)")
-                },
-                new[]
-                {
-                    new KeyboardButton("Экономика (Пермь)")
-                },
-                new[]
-                {
-                    new KeyboardButton("Управление бизнесом (Пермь)")
-                },
-                new[]
-                {
-                    new KeyboardButton("Бизнес-информатика (Пермь)")
-                },
-                new[]
-                {
-                    new KeyboardButton("Юриспруденция (Пермь)")
-                },
-                new[]
-                {
-                    new KeyboardButton("История (Пермь)")
-                },
-                new[]
-                {
-                    new KeyboardButton("К выбору города")
-                }
-            });
-            await Client.SendTextMessageAsync(message.Chat.Id, "Ниже представлены все доступные направления:", replyMarkup: replyKeyBoard);
+            string json = HelpingFunctions.ReturnTextFromFile("PermFacultetiSer.txt");
+            ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Ниже представлены все доступные направления:", replyMarkup: KeyBoard);
         }
     }
 }

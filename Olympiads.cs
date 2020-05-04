@@ -6,6 +6,7 @@ using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.InputFiles;
+using System.Text.Json;
 
 namespace TelegramBotHSE
 {
@@ -17,7 +18,7 @@ namespace TelegramBotHSE
         /// <param name="path"></param>
         /// <param name="e"></param>
         /// <param name="Client"></param>
-        public static async void SendOlymps(string path, Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
+        public static async void SendOlymps(string path, MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
             await Client.SendTextMessageAsync(message.Chat.Id, "Ниже появится PDF файл с перечнем:");
@@ -28,29 +29,12 @@ namespace TelegramBotHSE
         /// Метод, реализующий функционал раздела с ОЛИМПИАДАМИ
         /// </summary>
         /// <param name="e"></param>
-        public static async void OlympiadsMenu(Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
+        public static async void OlympiadsMenu(MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
-
-            var replyKeyBoard = new ReplyKeyboardMarkup(new[]
-            {
-                new[]
-                {
-                    new KeyboardButton("г. Москва"),
-                    new KeyboardButton("г. Санкт-Петербург")
-                },
-                new[]
-                {
-                    new KeyboardButton("г. Нижний Новгород"),
-                    new KeyboardButton("г. Пермь")
-                },
-                new[]
-                {
-                    new KeyboardButton("Вернуться в главное меню")
-                }
-            });
-
-            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите интересующий Вас город или вернитесь в главное меню", replyMarkup: replyKeyBoard);
+            string json = HelpingFunctions.ReturnTextFromFile("OlympiadsMenuSer.txt");
+            ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите интересующий Вас город или вернитесь в главное меню", replyMarkup: KeyBoard);
         }
 
     }

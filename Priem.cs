@@ -8,6 +8,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.InputFiles;
 using Telegram.Bot.Helpers;
 using Telegram.Bot.Requests;
+using System.Text.Json;
 
 namespace TelegramBotHSE
 {
@@ -22,26 +23,9 @@ namespace TelegramBotHSE
         public static async void PriemnayaKomissiya(Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
-
-            var replyKeyBoard = new ReplyKeyboardMarkup(new[]
-            {
-                new[]
-                {
-                    new KeyboardButton("Москва"),
-                    new KeyboardButton("Санкт-Петербург")
-                },
-                new[]
-                {
-                    new KeyboardButton("Нижний Новгород"),
-                    new KeyboardButton("Пермь")
-                },
-                new[]
-                {
-                    new KeyboardButton("Вернуться в главное меню")
-                }
-            });
-
-            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите интересующий Вас город или вернитесь в главное меню", replyMarkup: replyKeyBoard);
+            string json = HelpingFunctions.ReturnTextFromFile("PriemnayaKomissiyaSer.txt");
+            ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите интересующий Вас город или вернитесь в главное меню", replyMarkup: KeyBoard);
         }
 
 
@@ -53,25 +37,9 @@ namespace TelegramBotHSE
         public static async void PriemMoscow(Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
-
-            var replyKeyBoard = new ReplyKeyboardMarkup(new[]
-            {
-                new[]
-                {
-                    new KeyboardButton("Контакты и режим работы, Москва")
-                },
-                new[]
-                {
-                    new KeyboardButton("Приёмная комиссия на карте, Москва")
-                },
-                new[]
-                {
-                    new KeyboardButton("Вернуться в главное меню"),
-                    new KeyboardButton("Вернуться к списку городов")
-                }
-            });
-
-            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите нужную информацию или вернитесь в главное меню:", replyMarkup: replyKeyBoard);
+            string json = HelpingFunctions.ReturnTextFromFile("PriemMoscowSer.txt");
+            ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите нужную информацию или вернитесь в главное меню:", replyMarkup: KeyBoard);
     }
 
         /// <summary>
@@ -96,25 +64,9 @@ namespace TelegramBotHSE
         public static async void PriemPeterburg(Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
-
-            var replyKeyBoard = new ReplyKeyboardMarkup(new[]
-            {
-                new[]
-                {
-                    new KeyboardButton("Контакты и режим работы, Санкт-Петербург")
-                },
-                new[]
-                {
-                    new KeyboardButton("Приёмная комиссия на карте, Санкт-Петербург")
-                },
-                new[]
-                {
-                    new KeyboardButton("Вернуться в главное меню"),
-                    new KeyboardButton("Вернуться к списку городов")
-                }
-            });
-
-            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите нужную информацию или вернитесь в главное меню:", replyMarkup: replyKeyBoard);
+            string json = HelpingFunctions.ReturnTextFromFile("PriemPeterburgSer.txt");
+            ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите нужную информацию или вернитесь в главное меню:", replyMarkup: KeyBoard);
         }
 
         /// <summary>
@@ -140,25 +92,9 @@ namespace TelegramBotHSE
         public static async void PriemPerm(Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
-
-            var replyKeyBoard = new ReplyKeyboardMarkup(new[]
-            {
-                new[]
-                {
-                    new KeyboardButton("Контакты и режим работы, Пермь")
-                },
-                new[]
-                {
-                    new KeyboardButton("Приёмная комиссия на карте, Пермь")
-                },
-                new[]
-                {
-                    new KeyboardButton("Вернуться в главное меню"),
-                    new KeyboardButton("Вернуться к списку городов")
-                }
-            });
-
-            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите нужную информацию или вернитесь в главное меню:", replyMarkup: replyKeyBoard);
+            string json = HelpingFunctions.ReturnTextFromFile("PriemPermSer.txt");
+            ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите нужную информацию или вернитесь в главное меню:", replyMarkup: KeyBoard);
         }
 
         /// <summary>
@@ -183,25 +119,9 @@ namespace TelegramBotHSE
         public static async void PriemNovgorod(Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
-
-            var replyKeyBoard = new ReplyKeyboardMarkup(new[]
-            {
-                new[]
-                {
-                    new KeyboardButton("Контакты и режим работы, Нижний Новгород")
-                },
-                new[]
-                {
-                    new KeyboardButton("Приёмная комиссия на карте, Нижний Новгород")
-                },
-                new[]
-                {
-                    new KeyboardButton("Вернуться в главное меню"),
-                    new KeyboardButton("Вернуться к списку городов")
-                }
-            });
-
-            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите нужную информацию или вернитесь в главное меню:", replyMarkup: replyKeyBoard);
+            string json = HelpingFunctions.ReturnTextFromFile("PriemNovgorodSer.txt");
+            ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Выберите нужную информацию или вернитесь в главное меню:", replyMarkup: KeyBoard);
         }
 
         /// <summary>

@@ -33,6 +33,42 @@ namespace TelegramBotHSE
 
         }
 
+
+        /// <summary>
+        /// Метод, записывающий заданный текст в заданный файл
+        /// </summary>
+        /// <param name="path">Путь к файлу</param>
+        /// <param name="textToWrite">Текст для записи</param>
+        public static void WriteToTextFile(string path, string textToWrite)
+        {
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                using (StreamWriter sw = new StreamWriter(fs))
+                {
+                    sw.WriteLine(textToWrite);
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Метод, возвращающий содержимое текстового файла в виде строки
+        /// </summary>
+        /// <param name="path">Путь к файлу</param>
+        /// <returns>Содержимое текстового файла</returns>
+        public static string ReturnTextFromFile(string path)
+        {
+            string text = "";
+
+            using(StreamReader sr = new StreamReader(path))
+            {
+                text = sr.ReadToEnd();
+            }
+
+            return text;
+        }
+
+
         /// <summary>
         /// Метод, отправляющий пользователю текст заданного текстового файла
         /// </summary>

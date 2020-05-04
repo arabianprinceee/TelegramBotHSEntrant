@@ -7,6 +7,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.InputFiles;
 using System.Threading;
+using System.Text.Json;
 
 
 namespace TelegramBotHSE
@@ -21,30 +22,9 @@ namespace TelegramBotHSE
         public static async void SalesMainMKeyboard(MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
-
-            var replyKeyBoard = new ReplyKeyboardMarkup(new[]
-            {
-                new[]
-                {
-                    new KeyboardButton("По результатам ЕГЭ"),
-                    new KeyboardButton("По результатам олимпиад")
-                },
-                new[]
-                {
-                    new KeyboardButton("Для выпускников лицея ВШЭ")
-                },
-                new[]
-                {
-                    new KeyboardButton("Для выпускников ФДП"),
-                    new KeyboardButton("Скидки по иным основаниям")
-                },
-                new[]
-                {
-                    new KeyboardButton("Вернуться в главное меню")
-                }
-            });
-
-            await Client.SendTextMessageAsync(message.Chat.Id, "Выберете основание для получения скидки на обучение", replyMarkup: replyKeyBoard);
+            string json = HelpingFunctions.ReturnTextFromFile("SalesMainMKeyboardSer.txt");
+            ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Выберете основание для получения скидки на обучение", replyMarkup: KeyBoard);
         }
 
 
@@ -56,27 +36,9 @@ namespace TelegramBotHSE
         public static async void SalesEGE(MessageEventArgs e, TelegramBotClient Client) 
         {
             var message = e.Message;
-
-            var replyKeyBoard = new ReplyKeyboardMarkup(new[]
-            {
-                new[]
-                {
-                    new KeyboardButton("гор. Москва"),
-                    new KeyboardButton("гор. Санкт-Петербург")
-                },
-                new[]
-                {
-                    new KeyboardButton("гор. Нижний Новгород"),
-                    new KeyboardButton("гор. Пермь")
-                },
-                new[]
-                {
-                    new KeyboardButton("Назад"),
-                    new KeyboardButton("Вернуться в главное меню")
-                }
-            });
-
-            await Client.SendTextMessageAsync(message.Chat.Id, "Выберете город", replyMarkup: replyKeyBoard);
+            string json = HelpingFunctions.ReturnTextFromFile("SalesEGESer.txt");
+            ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Выберете город", replyMarkup: KeyBoard);
         }
 
         /// <summary>
@@ -140,33 +102,9 @@ namespace TelegramBotHSE
         public static async void OtherSalesKeyboard(MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
-
-            var replyKeyBoard = new ReplyKeyboardMarkup(new[]
-            {
-                new[]
-                {
-                    new KeyboardButton("Выпускникам базовых и ключевых региональных школ")
-                },
-                new[]
-                {
-                    new KeyboardButton("Выпускникам региональных центров")
-                },
-                new[]
-                {
-                    new KeyboardButton("Выпускникам школ Распределенного Лицея")
-                },
-                new[]
-                {
-                    new KeyboardButton("Выпускникам Физико – математической школы МИЭМ")
-                },
-                new[]
-                {
-                    new KeyboardButton("Вернуться назад"),
-                    new KeyboardButton("Вернуться в главное меню")
-                }
-            });
-
-            await Client.SendTextMessageAsync(message.Chat.Id, "Выберете доступный вариант:", replyMarkup: replyKeyBoard);
+            string json = HelpingFunctions.ReturnTextFromFile("OtherSalesKeyboardSer.txt");
+            ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Выберете доступный вариант:", replyMarkup: KeyBoard);
         }
 
         /// <summary>
