@@ -1,0 +1,14 @@
+/Users/anas/Projects/TelegramBotHSE/bin/Debug/TelegramBotHSE.exe.config
+/Users/anas/Projects/TelegramBotHSE/bin/Debug/TelegramBotHSE.exe
+/Users/anas/Projects/TelegramBotHSE/bin/Debug/TelegramBotHSE.pdb
+/Users/anas/Projects/TelegramBotHSE/bin/Debug/Newtonsoft.Json.dll
+/Users/anas/Projects/TelegramBotHSE/bin/Debug/Telegram.Bot.dll
+/Users/anas/Projects/TelegramBotHSE/bin/Debug/Newtonsoft.Json.xml
+/Users/anas/Projects/TelegramBotHSE/bin/Debug/Telegram.Bot.xml
+/Users/anas/Projects/TelegramBotHSE/obj/Debug/TelegramBotHSE.csprojAssemblyReference.cache
+/Users/anas/Projects/TelegramBotHSE/obj/Debug/TelegramBotHSE.exe.config
+/Users/anas/Projects/TelegramBotHSE/obj/Debug/TelegramBotHSE.csproj.CopyComplete
+/Users/anas/Projects/TelegramBotHSE/obj/Debug/TelegramBotHSE.exe
+/Users/anas/Projects/TelegramBotHSE/obj/Debug/TelegramBotHSE.pdb
+/Users/anas/Projects/TelegramBotHSE/obj/Debug/TelegramBotHSE.csproj.CoreCompileInputs.cache
+/Users/anas/Projects/TelegramBotHSE/bin/Debug/MihaZupan.HttpToSocks5Proxy.dll

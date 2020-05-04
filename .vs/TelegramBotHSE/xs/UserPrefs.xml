@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{459E9CD6-B600-4DAD-A8A2-64D87A75F3E2}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Olympiads.cs">
+    <Files>
+      <File FileName="Program.cs" Line="47" Column="82" />
+      <File FileName="FAQ.cs" Line="9" Column="1" />
+      <File FileName="Napravleniya.cs" Line="2" Column="1" />
+      <File FileName="Olympiads.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TelegramBotHSE" expanded="True">
+            <Node name="TelegramBotHSE" expanded="True">
+              <Node name="Olympiads.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <Debugger.DebugSourceFolders>
+    <String>/Users/anas/Library/Caches/VisualStudio/8.0/Symbols/mono/mono/d9001b5ae70c111d8f39e1584e62fbdda81b2502</String>
+  </Debugger.DebugSourceFolders>
+  <MonoDevelop.Ide.ItemProperties.TelegramBotHSE PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
