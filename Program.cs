@@ -656,7 +656,7 @@ namespace TelegramBotHSE
 
             // var proxy = new HttpToSocks5Proxy("185.10.57.107", 1234);
 
-            Client = new TelegramBotClient(Constants.APIKEY);
+            Client = new TelegramBotClient("1111882977:AAEtzHKWuS8wfatCVfz7K05Zp_-wmjxsnU0");
 
             Client.OnMessage += Client_MessageRecieved; // Принимаем сообщения от пользователя
 
