@@ -1,17 +1,18 @@
 ﻿<Properties StartupConfiguration="{459E9CD6-B600-4DAD-A8A2-64D87A75F3E2}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Constatnts.cs">
     <Files>
       <File FileName="Program.cs" Line="659" Column="45" />
-      <File FileName="FAQ.cs" Line="14" Column="6" />
-      <File FileName="Napravleniya.cs" Line="2" Column="1" />
-      <File FileName="Olympiads.cs" Line="1" Column="1" />
+      <File FileName="FAQ.cs" />
+      <File FileName="Napravleniya.cs" />
+      <File FileName="Olympiads.cs" />
+      <File FileName="Constatnts.cs" Line="6" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TelegramBotHSE" expanded="True">
             <Node name="TelegramBotHSE" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Constatnts.cs" selected="True" />
             </Node>
           </Node>
         </State>

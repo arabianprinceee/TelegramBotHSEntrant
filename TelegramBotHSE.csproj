@@ -54,6 +54,7 @@
     <Compile Include="NapravleniyaPerm.cs" />
     <Compile Include="NapravleniyaNovgorod.cs" />
     <Compile Include="FAQ.cs" />
+    <Compile Include="Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
