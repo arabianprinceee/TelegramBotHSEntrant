@@ -23,12 +23,23 @@ namespace TelegramBotHSE
         {
             var message = e.Message;
 
-            using (Stream stream = System.IO.File.OpenRead(path))
+            try
             {
-                await Client.SendDocumentAsync(
-                /* chatId: */ message.Chat.Id,
-                /* document: */ new InputOnlineFile( /* content: */ stream, /* fileName: */ path)
-                );
+                using (Stream stream = System.IO.File.OpenRead(path))
+                {
+                    await Client.SendDocumentAsync(
+                    /* chatId: */ message.Chat.Id,
+                    /* document: */ new InputOnlineFile( /* content: */ stream, /* fileName: */ path)
+                    );
+                }
+            }
+            catch (IOException)
+            {
+                Console.WriteLine($"Проблемы с файлом: {path}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -41,12 +52,23 @@ namespace TelegramBotHSE
         /// <param name="textToWrite">Текст для записи</param>
         public static void WriteToTextFile(string path, string textToWrite)
         {
-            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            try
             {
-                using (StreamWriter sw = new StreamWriter(fs))
+                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                 {
-                    sw.WriteLine(textToWrite);
+                    using (StreamWriter sw = new StreamWriter(fs))
+                    {
+                        sw.WriteLine(textToWrite);
+                    }
                 }
+            }
+            catch (IOException)
+            {
+                Console.WriteLine($"Проблемы с файлом: {path}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -60,9 +82,20 @@ namespace TelegramBotHSE
         {
             string text = "";
 
-            using(StreamReader sr = new StreamReader(path))
+            try
             {
-                text = sr.ReadToEnd();
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    text = sr.ReadToEnd();
+                }
+            }
+            catch (IOException)
+            {
+                Console.WriteLine($"Проблемы с файлом: {path}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
             return text;
@@ -92,10 +125,13 @@ namespace TelegramBotHSE
 
                 await Client.SendTextMessageAsync(message.Chat.Id, text.Replace('n', '\n'));
             }
+            catch (IOException)
+            {
+                Console.WriteLine($"Проблемы с файлом: {path}");
+            }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message + " : Ошибка в обработке файла");
-                Environment.Exit(0);
+                Console.WriteLine(ex.Message);
             }
         }
     }

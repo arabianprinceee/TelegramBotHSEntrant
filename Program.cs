@@ -631,6 +631,24 @@ namespace TelegramBotHSE
                         // КОНЕЦ РАЗДЕЛА НАПРАВЛЕНИЙ ПОДГОТОВКИ
 
 
+                        // РАЗДЕЛ ЧАСТО ЗАДАВАЕМЫХ ВОПРОСОВ
+                        case "Часто задаваемые вопросы":
+                            FAQ.FAQKeyBoard(e, Client);
+                            break;
+                        case "Перед подачей документов":
+                            HelpingFunctions.SendTextFromFile("FAQBeforeDocs.txt", e, Client);
+                            break;
+                        case "Подача документов":
+                            HelpingFunctions.SendTextFromFile("FAQDocs.txt", e, Client);
+                            break;
+                        case "Конкурс":
+                            HelpingFunctions.SendTextFromFile("FAQKonkurs.txt", e, Client);
+                            break;
+                        case "Общежития":
+                            HelpingFunctions.SendTextFromFile("FAQObsezhitiya.txt", e, Client);
+                            break;
+                        // КОНЕЦ РАЗДЕЛА ЧАСТО ЗАДАВАЕМЫХ ВОПРОСОВ
+
 
                         // РАЗДЕЛ НЕ НАЙДЕННОЙ ИНФОРМАЦИИ
                         case "Не нашли ответ на вопрос?":
@@ -640,16 +658,6 @@ namespace TelegramBotHSE
                                 "\n\nСвязаться с разработчиком можно через телеграм @arabianprinceee\n\n\n");
                             break;
                         // КОНЕЦ РАЗДЕЛА
-
-
-
-                        // РАЗДЕЛ ЧАСТО ЗАДАВАЕМЫХ ВОПРОСОВ
-                        case "Часто задаваемые вопросы":
-                            await Client.SendTextMessageAsync(message.Chat.Id, "Раздел находится на стадии разработки...");
-                            await Client.SendStickerAsync(message.Chat.Id, "CAACAgIAAxkBAAI7316CXMVPZwp81dp5y78X3c6Min06AAJbAQACT5wTAv8e4u2dM23QGAQ");
-                            break;
-                        // КОНЕЦ РАЗДЕЛА ЧАСТО ЗАДАВАЕМЫХ ВОПРОСОВ
-
 
 
                         default:
