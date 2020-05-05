@@ -34,7 +34,7 @@ namespace TelegramBotHSE
 
             // var proxy = new HttpToSocks5Proxy("185.10.57.107", 1234);
 
-            Client = new TelegramBotClient("");
+            Client = new TelegramBotClient("1111882977:AAFHL410jAYdM3LVidJ-EXhNJR4wineXpv8");
 
             Client.OnMessage += Client_MessageRecieved; // Принимаем сообщения от пользователя
 
@@ -52,13 +52,8 @@ namespace TelegramBotHSE
         /// <param name="e"></param>
         private static async void Client_MessageRecieved(object sender, MessageEventArgs e)
         {
-            // Текст для команды старта
-            string textForTheStart = "Привет! Добро пожаловать! \n\nДля того, чтобы посмотреть основные команды бота, просто введи '/'." +
-                "\n\nВсе необходимые команды доступны в виртуальной клавиатуре по команде /keyboard.";
-
             // Список, содержащий в себе строки информации из файла с направлениями, проходными баллами и т.д
             List<string> InfoNapravleniya = CSVReader.ReadCSV("Napravleniya.csv");
-
 
             if (e != null) // Проверяем, что отправленное сообщение не пустое
             {
@@ -73,12 +68,12 @@ namespace TelegramBotHSE
                 {
                     Console.WriteLine($"{e.Message.From.FirstName} {e.Message.From.LastName} sended this message : \"{e.Message.Text}\"");
 
-
                     // Обработка пользовательских вводов
                     switch (message.Text)
                     {
                         case "/start":
-                            await Client.SendTextMessageAsync(message.Chat.Id, textForTheStart);
+                            await Client.SendTextMessageAsync(message.Chat.Id, "Привет! Добро пожаловать! \n\nДля того, чтобы посмотреть основные команды бота, просто введи '/'." +
+                            "\n\nВсе необходимые команды доступны в виртуальной клавиатуре по команде /keyboard.");
                             break;
 
                         case "Вернуться в главное меню":
@@ -98,7 +93,6 @@ namespace TelegramBotHSE
                             break;
 
 
-
                         // РАЗДЕЛ ОЛИМПИАД
                         case "г. Москва":
                             Olympiads.SendOlymps("OlympMoscow.pdf", e, Client);
@@ -113,7 +107,6 @@ namespace TelegramBotHSE
                             Olympiads.SendOlymps("OlympNovgorod.pdf", e, Client);
                             break;
                         // КОНЕЦ РАЗДЕЛА ОЛИМПИАД
-
 
 
                         // РАЗДЕЛ ПРИЁМНОЙ КОМИССИИ
@@ -160,7 +153,6 @@ namespace TelegramBotHSE
                             Priem.PriemnayaKomissiya(e, Client);
                             break;
                         // КОНЕЦ РАЗДЕЛА ПРИЕМНОЙ КОМИССИИ
-
 
 
                         // РАЗДЕЛ СКИДОК
@@ -219,12 +211,8 @@ namespace TelegramBotHSE
                         // КОНЕЦ РАЗДЕЛА СКИДОК
 
 
-
                         // РАЗДЕЛ НАПРАВЛЕНИЙ ПОДГОТОВКИ
-                        case "Направления подготовки":
-                            //await Client.SendTextMessageAsync(message.Chat.Id, "Раздел находится на стадии разработки...");
-                            //await Client.SendStickerAsync(message.Chat.Id, "CAACAgIAAxkBAAI7316CXMVPZwp81dp5y78X3c6Min06AAJbAQACT5wTAv8e4u2dM23QGAQ");
-
+                        case "Направления подготовки":  
                             Napravleniya.CityMenuNapravleniya(e, Client);
                             break;
 
@@ -337,7 +325,6 @@ namespace TelegramBotHSE
                             break;
 
 
-
                         case "Экономика и управление":
                             Napravleniya.EconomUpravlenie(e, Client);
                             break;
@@ -376,14 +363,12 @@ namespace TelegramBotHSE
                             break;
 
 
-
                         case "Социология и социальная работа":
                             Napravleniya.Sociologiya(e, Client);
                             break;
                         case "Социология":
                             await Client.SendTextMessageAsync(message.Chat.Id, InfoNapravleniya[27]);
                             break;
-
 
 
                         case "Юриспруденция⁣": // Есть невидимый символ
@@ -414,8 +399,6 @@ namespace TelegramBotHSE
                             break;
 
 
-
-
                         case "Средства массовой информации и информационно-библиотечное дело":
                             Napravleniya.SredstvaMassInfo(e, Client);
                             break;
@@ -428,9 +411,6 @@ namespace TelegramBotHSE
                         case "Медиакоммуникации":
                             await Client.SendTextMessageAsync(message.Chat.Id, InfoNapravleniya[36]);
                             break;
-
-
-
 
 
                         case "Языкознание и литературоведение":
@@ -450,7 +430,6 @@ namespace TelegramBotHSE
                             break;
 
 
-
                         case "История и археология":
                             Napravleniya.HistoryArcheology(e, Client);
                             break;
@@ -462,14 +441,12 @@ namespace TelegramBotHSE
                             break;
 
 
-
                         case "Философия, этика и религиоведение":
                             Napravleniya.Filosofiya(e, Client);
                             break;
                         case "Философия":
                             await Client.SendTextMessageAsync(message.Chat.Id, InfoNapravleniya[43]);
                             break;
-
 
 
                         case "Искусствознание":
@@ -483,14 +460,12 @@ namespace TelegramBotHSE
                             break;
 
 
-
                         case "Культуроведение и социокультурные проекты":
                             Napravleniya.Kultura(e, Client);
                             break;
                         case "Культурология":
                             await Client.SendTextMessageAsync(message.Chat.Id, InfoNapravleniya[46]);
                             break;
-
 
 
                         case "Изобразительное искусство и прикладные виды искусств":
@@ -502,7 +477,6 @@ namespace TelegramBotHSE
                         case "Мода":
                             await Client.SendTextMessageAsync(message.Chat.Id, InfoNapravleniya[48]);
                             break;
-
 
 
                         case "Востоковедение и африканистика":

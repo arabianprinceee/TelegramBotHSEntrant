@@ -18,7 +18,7 @@ namespace TelegramBotHSE
         /// Метод, в котором разработано меню с кнопками, содержащими в себе некоторые ПОЛЕЗНЫЕ ССЫЛКИ
         /// </summary>
         /// <param name="e"></param>
-        public static async void ShowHelpfulLinks(Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
+        public static async void ShowHelpfulLinks(MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
 

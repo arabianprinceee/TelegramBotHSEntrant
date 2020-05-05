@@ -1,10 +1,19 @@
 ﻿<Properties StartupConfiguration="{459E9CD6-B600-4DAD-A8A2-64D87A75F3E2}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="FAQ.cs" Line="29" Column="9" />
-      <File FileName="Sales.cs" />
-      <File FileName="HelpingFunctions.cs" />
-      <File FileName="Program.cs" Line="661" Column="1" />
+      <File FileName="Program.cs" Line="45" Column="1" />
+      <File FileName="FAQ.cs" Line="26" Column="94" />
+      <File FileName="Sales.cs" Line="1" Column="1" />
+      <File FileName="HelpingFunctions.cs" Line="22" Column="60" />
+      <File FileName="CSVReader.cs" Line="1" Column="1" />
+      <File FileName="HelpfulLinks.cs" Line="21" Column="51" />
+      <File FileName="MainMenuKeyboard.cs" Line="21" Column="47" />
+      <File FileName="Napravleniya.cs" Line="1" Column="1" />
+      <File FileName="NapravleniyaNovgorod.cs" Line="1" Column="1" />
+      <File FileName="NapravleniyaPerm.cs" Line="1" Column="1" />
+      <File FileName="NapravleniyaSPB.cs" Line="1" Column="1" />
+      <File FileName="Olympiads.cs" Line="1" Column="1" />
+      <File FileName="Priem.cs" Line="119" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

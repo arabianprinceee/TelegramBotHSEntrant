@@ -19,7 +19,7 @@ namespace TelegramBotHSE
         /// </summary>
         /// <param name="path"></param>
         /// <param name="e"></param>
-        public static async void SendDocument(string path, Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
+        public static async void SendDocument(string path, MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
 
@@ -27,10 +27,7 @@ namespace TelegramBotHSE
             {
                 using (Stream stream = System.IO.File.OpenRead(path))
                 {
-                    await Client.SendDocumentAsync(
-                    /* chatId: */ message.Chat.Id,
-                    /* document: */ new InputOnlineFile( /* content: */ stream, /* fileName: */ path)
-                    );
+                    await Client.SendDocumentAsync(message.Chat.Id, new InputOnlineFile(stream, path));
                 }
             }
             catch (IOException)

@@ -23,9 +23,7 @@ namespace TelegramBotHSE
             var message = e.Message;
             string json = HelpingFunctions.ReturnTextFromFile("FAQKeyBoardSer.txt");
             ReplyKeyboardMarkup KeyBoard = JsonSerializer.Deserialize<ReplyKeyboardMarkup>(json);
-            await Client.SendTextMessageAsync(message.Chat.Id, "Переход выполнен", replyMarkup: KeyBoard);
+            await Client.SendTextMessageAsync(message.Chat.Id, "Выберете интересующий раздел:", replyMarkup: KeyBoard);
         }
-
-        
     }
 }

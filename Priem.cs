@@ -89,7 +89,7 @@ namespace TelegramBotHSE
         /// </summary>
         /// <param name="e"></param>
         /// <param name="Client"></param>
-        public static async void PriemPerm(Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
+        public static async void PriemPerm(MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
             string json = HelpingFunctions.ReturnTextFromFile("PriemPermSer.txt");
@@ -116,7 +116,7 @@ namespace TelegramBotHSE
         /// </summary>
         /// <param name="e"></param>
         /// <param name="Client"></param>
-        public static async void PriemNovgorod(Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
+        public static async void PriemNovgorod(MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
             string json = HelpingFunctions.ReturnTextFromFile("PriemNovgorodSer.txt");

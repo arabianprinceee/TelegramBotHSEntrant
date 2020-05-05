@@ -18,7 +18,7 @@ namespace TelegramBotHSE
         /// Метод, содержащий основную виртуальную клавиатуру, которая вызывается командой /KEYBOARD
         /// </summary>
         /// <param name="e"> Параметр клиента </param>
-        public static async void MainKeyBoard(Telegram.Bot.Args.MessageEventArgs e, TelegramBotClient Client)
+        public static async void MainKeyBoard(MessageEventArgs e, TelegramBotClient Client)
         {
             var message = e.Message;
             string json = HelpingFunctions.ReturnTextFromFile("MainKeyBoardSer.txt");
