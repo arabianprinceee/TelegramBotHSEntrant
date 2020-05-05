@@ -11,9 +11,6 @@ using MihaZupan;
 using System.Text.Json;
 using System.Collections.Generic;
 
-
-// ВИРТУАЛЬНУЮ КЛАВИАТУРУ ОН ОБРАБАТЫВАЕТ, КАК ТЕКСТ, А НЕ КАК КНОПКИ
-
 namespace TelegramBotHSE
 {
     class MainClass
@@ -27,13 +24,29 @@ namespace TelegramBotHSE
         /// <param name="e"></param>
         private static void Client_OnCallbackQuery(object sender, CallbackQueryEventArgs e)
         {
-            string buttonText = e.CallbackQuery.Data; // Текст кнопки
+            string buttonText = e.CallbackQuery.Data; 
             Console.WriteLine(buttonText);
+        }
+
+        public static void Main()
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            // var proxy = new HttpToSocks5Proxy("185.10.57.107", 1234);
+
+            Client = new TelegramBotClient("");
+
+            Client.OnMessage += Client_MessageRecieved; // Принимаем сообщения от пользователя
+
+            Client.OnCallbackQuery += Client_OnCallbackQuery;
+
+            Client.StartReceiving();
+
+            Console.ReadKey();
         }
 
         /// <summary>
         /// Метод, обрабатывающий получение сообщений от пользователя
-        /// Здесь как раз будет происходить вся основная работа бота
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -641,30 +654,12 @@ namespace TelegramBotHSE
 
                         default:
                             await Client.SendTextMessageAsync(message.Chat.Id, "К сожалению, введена неизвестная команда, попробуйте ещё раз!" +
-                                "\n\nОбратите внимание, что бот находится в стадии разработки, поэтому пока что работают не все разделы. " +
                                 "\n\nБот распознаёт только заданные текстовые команды, список основных команд вы можете увидеть, введя символ '/'." +
                                 "\n\nВсе необходимые команды доступны в виртуальной клавиатуре по команде /keyboard.");
                             break;
                     }
                 }
             }
-        }
-
-        public static void Main()
-        {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-
-            // var proxy = new HttpToSocks5Proxy("185.10.57.107", 1234);
-
-            Client = new TelegramBotClient("");
-
-            Client.OnMessage += Client_MessageRecieved; // Принимаем сообщения от пользователя
-
-            Client.OnCallbackQuery += Client_OnCallbackQuery;
-
-            Client.StartReceiving();
-
-            Console.ReadKey();
         }
 
     }

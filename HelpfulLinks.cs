@@ -8,6 +8,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.InputFiles;
 using Telegram.Bot.Helpers;
 using Telegram.Bot.Requests;
+using System.Text.Json;
 
 namespace TelegramBotHSE
 {
@@ -47,7 +48,6 @@ namespace TelegramBotHSE
             });
 
             await Client.SendTextMessageAsync(message.Chat.Id, "Выберите нужную сcылку:", replyMarkup: menuKeyboard);
-
             await Client.SendStickerAsync(message.Chat.Id, "CAACAgIAAxkBAAEOx1deblVYpNjC3stEpnKftOyRiZoO3gACVgEAAk-cEwJ5KHBO9mHQYBgE");
         }
     }
