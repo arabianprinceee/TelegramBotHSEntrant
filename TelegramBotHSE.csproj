@@ -87,7 +87,6 @@
     <Compile Include="NapravleniyaPerm.cs" />
     <Compile Include="NapravleniyaNovgorod.cs" />
     <Compile Include="FAQ.cs" />
-    <Compile Include="TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

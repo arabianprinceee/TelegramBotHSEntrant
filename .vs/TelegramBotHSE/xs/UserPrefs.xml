@@ -2,21 +2,18 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
       <File FileName="Program.cs" Line="659" Column="48" />
-      <File FileName="TestClass.cs" Line="38" Column="13" />
-      <File FileName="NapravleniyaPerm.cs" Line="24" Column="20" />
-      <File FileName="NapravleniyaNovgorod.cs" Line="23" Column="20" />
-      <File FileName="MainMenuKeyboard.cs" Line="1" Column="1" />
-      <File FileName="HelpingFunctions.cs" Line="1" Column="1" />
-      <File FileName="HelpfulLinks.cs" Line="1" Column="1" />
-      <File FileName="CSVReader.cs" Line="1" Column="1" />
+      <File FileName="NapravleniyaPerm.cs" />
+      <File FileName="NapravleniyaNovgorod.cs" />
+      <File FileName="MainMenuKeyboard.cs" />
+      <File FileName="HelpingFunctions.cs" />
+      <File FileName="HelpfulLinks.cs" />
+      <File FileName="CSVReader.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TelegramBotHSE" expanded="True">
-            <Node name="TelegramBotHSE" expanded="True">
-              <Node name="Program.cs" selected="True" />
-            </Node>
+            <Node name="TelegramBotHSE" expanded="True" />
           </Node>
         </State>
       </Pad>
