@@ -3,6 +3,6 @@
 
 # Скриншоты
   <img src="https://github.com/arabianprince23/TelegramBotHSEntrant/blob/master/IMG_5668.PNG" alt="alt text" width="250" height="550">
-    <img src="https://github.com/arabianprince23/TelegramBotHSEntrant/blob/master/IMG_5669.PNG" alt="alt text" width="250" height="550">
-      <img src="https://github.com/arabianprince23/TelegramBotHSEntrant/blob/master/IMG_5670.PNG" alt="alt text" width="250" height="550">
-        <img src="https://github.com/arabianprince23/TelegramBotHSEntrant/blob/master/IMG_5671.PNG" alt="alt text" width="250" height="550">
+    <img src="https://github.com/arabianprince23/TelegramBotHSEntrant/blob/master/IMG_5669.JPG" alt="alt text" width="250" height="550">
+      <img src="https://github.com/arabianprince23/TelegramBotHSEntrant/blob/master/IMG_5670.JPG" alt="alt text" width="250" height="550">
+        <img src="https://github.com/arabianprince23/TelegramBotHSEntrant/blob/master/IMG_5671.JPG" alt="alt text" width="250" height="550">
